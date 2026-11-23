@@ -559,7 +559,7 @@ function renderRiskDoughnutChart(distributionData) {
 
     const labels = distributionData.map(d => `${d.tier} Risk`);
     const counts = distributionData.map(d => d.count);
-    const colors = ["#ef4444", "#f59e0b", "#10b981"]; // High, Medium, Low
+    const colors = isDark ? ["#60A5FA", "#3B82F6", "#1E3A8A"] : ["#1E3A8A", "#3B82F6", "#93C5FD"];
 
     state.charts.riskDoughnut = new Chart(canvas, {
         type: "doughnut",
@@ -568,7 +568,7 @@ function renderRiskDoughnutChart(distributionData) {
             datasets: [{
                 data: counts,
                 backgroundColor: colors,
-                borderColor: isDark ? "#112238" : "#ffffff",
+                borderColor: isDark ? "#10265C" : "#ffffff",
                 borderWidth: 2,
                 hoverOffset: 6
             }]
@@ -593,7 +593,7 @@ function renderRiskDoughnutChart(distributionData) {
                     }
                 },
                 tooltip: {
-                    backgroundColor: isDark ? "#1e3553" : "#0f2b48",
+                    backgroundColor: isDark ? "#10265C" : "#0B1F4B",
                     padding: 10,
                     titleFont: { family: "Inter", size: 13, weight: "bold" },
                     bodyFont: { family: "Inter", size: 12 },
@@ -638,8 +638,8 @@ function renderCourseBarChart(courseData) {
             datasets: [{
                 label: "Average Risk (%)",
                 data: riskPercentages,
-                backgroundColor: isDark ? "rgba(20, 184, 166, 0.85)" : "#0f2b48",
-                borderColor: isDark ? "#14b8a6" : "#0f2b48",
+                backgroundColor: isDark ? "rgba(96, 165, 250, 0.85)" : "#1E3A8A",
+                borderColor: isDark ? "#60A5FA" : "#172554",
                 borderWidth: 1,
                 borderRadius: 4
             }]
@@ -671,7 +671,7 @@ function renderCourseBarChart(courseData) {
             plugins: {
                 legend: { display: false },
                 tooltip: {
-                    backgroundColor: isDark ? "#1e3553" : "#0f2b48",
+                    backgroundColor: isDark ? "#10265C" : "#0B1F4B",
                     padding: 10,
                     callbacks: {
                         label: ctx => ` Average Dropout Risk: ${ctx.raw}%`
@@ -1365,8 +1365,8 @@ function renderProfileShapChart(localFactors) {
     });
 
     const values = sorted.map(f => f.shap_value);
-    const bgColors = sorted.map(f => f.shap_value > 0 ? "rgba(239, 68, 68, 0.85)" : "rgba(13, 148, 136, 0.85)");
-    const borderColors = sorted.map(f => f.shap_value > 0 ? "#ef4444" : "#0d9488");
+    const bgColors = sorted.map(f => f.shap_value > 0 ? "rgba(239, 68, 68, 0.85)" : (isDark ? "rgba(96, 165, 250, 0.85)" : "rgba(30, 58, 138, 0.85)"));
+    const borderColors = sorted.map(f => f.shap_value > 0 ? "#ef4444" : (isDark ? "#60A5FA" : "#1E3A8A"));
 
     state.charts.profileShap = new Chart(canvas, {
         type: "bar",
@@ -1406,7 +1406,7 @@ function renderProfileShapChart(localFactors) {
             plugins: {
                 legend: { display: false },
                 tooltip: {
-                    backgroundColor: isDark ? "#1e3553" : "#0f2b48",
+                    backgroundColor: isDark ? "#10265C" : "#0B1F4B",
                     padding: 12,
                     callbacks: {
                         title: ctx => sorted[ctx[0].dataIndex].feature,
