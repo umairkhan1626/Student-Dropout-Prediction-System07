@@ -6,4 +6,4 @@
  * set window.API_BASE to your deployed backend URL:
  * window.API_BASE = "https://your-backend-url.onrender.com";
  */
-window.API_BASE = "";
+window.API_BASE = "https://student-dropout-prediction-system07-fs49.onrender.com";
