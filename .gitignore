@@ -12,3 +12,7 @@ venv/
 !backend/features.pkl
 !backend/shap_values.npy
 !backend/risk_scores.csv
+
+# Temporary handoff notes & archives
+handoff/
+*.zip

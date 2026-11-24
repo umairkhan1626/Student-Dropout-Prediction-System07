@@ -1,5 +1,8 @@
 # Student Dropout Risk Prediction & Counselor Briefing System (EduGuard)
 
+**Last Updated:** November 24, 2026  
+**Latest Release:** Full-Stack Decoupled Architecture (`backend/` FastAPI + `frontend/` Web Portal) with Solid Blue Header Bar & Sidebar Theme.
+
 An end-to-end, explainable AI decision-support platform designed for higher education academic advisors and counselors. The system predicts student dropout risk, calculates situational operational urgency, prioritizes students in a triage queue, and generates individualized, explainable advising briefings using SHAP (SHapley Additive exPlanations).
 
 ---
@@ -31,14 +34,15 @@ AI PROJECT/
 │   └── data/
 │       └── data.csv           # Semicolon-delimited UCI student dataset (4,424 rows, 36 features)
 ├── frontend/
-│   ├── index.html             # Single-page web application UI
+│   ├── index.html             # Single-page web application UI (Landing page & Portal)
 │   ├── script.js              # Vanilla JS controller with dynamic API_BASE integration
-│   ├── style.css              # Custom responsive stylesheet (Navy/Teal theme)
+│   ├── style.css              # Custom responsive stylesheet (Solid Blue Header & Sidebar, Light/Dark mode)
 │   ├── config.js              # Configurable API_BASE URL setting
 │   ├── results.csv            # Static copy of CV benchmark results
 │   └── shap_summary.png       # Static copy of global SHAP summary plot
 ├── .gitignore                 # Git ignore rules (explicitly tracking required backend artifacts)
 ├── VIVA_PREP.md               # Oral viva defense cheat sheet with Q&A
+├── PROGRESS.md                # Detailed project development progress report
 └── README.md                  # Project documentation (this file)
 ```
 
